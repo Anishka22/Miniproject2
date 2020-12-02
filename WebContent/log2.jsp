@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
     <link rel="stylesheet" href="style.css"/>
@@ -83,16 +87,17 @@ button:hover {
 }
 </style>
 <body>
+<c:set var="x" value="0"></c:set>
  <h1 style="font-size:30px">GROCERS </h1>
         
         <nav class="navigation-bar">
-            <img class="logo" src="fruits-and-vegetable.png">
-            <a href="lab2.html" >SHOP BY CATEGORY</a>
-            
-            <li style="float:right"><a class="fi" href="about.html">ABOUT</a></li>
+            <img class="logo" src="img/fruits-and-vegetable.png">
+            <a href="lab2.jsp" >SHOP BY CATEGORY</a>
+            <li style="float:right"><a href="Anishka?page=showcart">CART(<c:out value="${x}"/>)</a></li>
+            <li style="float:right"><a class="fi" href="about.jsp">ABOUT</a></li>
             <li style="float:right"><a class="fi" href="index.jsp" >LOGIN</a></li>
-            <li style="float:right"><a class="fi" href="log2.html" >REGISTER</a></li>
-            <li style="float:right"><a class="fi" href="home.html" >HOME</a></li>
+           
+            <li style="float:right"><a class="fi" href="home.jsp" >HOME</a></li>
                 
         </nav>
 <form action="Register" rstyle="border:1px solid #ccc" method="get" >
