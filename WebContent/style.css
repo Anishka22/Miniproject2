@@ -72,7 +72,7 @@ h1{text-align: center
     display: inline-block;
   }
   a:link {
-    color:cyan;
+    color:purple;
     background-color: transparent;
     text-decoration: none;
   }
@@ -81,4 +81,23 @@ h1{text-align: center
     background-color: transparent;
     text-decoration: underline;
   }
+ table th{
+	text-align: left;
+	background-color: #3a6070;
+	color: white;
+	padding: 4px 30px 4px 8px;
+}
+
+table td{
+	border: 1px solid black;
+	padding: 4px 8px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+  
   
