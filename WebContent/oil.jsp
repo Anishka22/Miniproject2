@@ -23,6 +23,22 @@ align:center;}
 </head>
 <body>
 
+<c:set var="x" value="0"></c:set>
+	<c:forEach items="${cartlist }" var="i">
+		<c:set var="x" value="${x+1 }"></c:set>
+	</c:forEach>
+	<h1 style="font-size:30px">GROCERS </h1>
+        
+        <nav class="navigation-bar">
+            <img class="logo" src="img/fruits-and-vegetable.png">
+            <a href="lab2.jsp" >SHOP BY CATEGORY</a>
+             <li style="float:right"><a href="Anishka?page=showcart">CART(<c:out value="${x}"/>)</a></li>
+            <li style="float:right"><a class="fi" href="about.jsp">ABOUT</a></li>
+            <li style="float:right"><a class="fi" href="index.jsp" >LOGIN</a></li>
+            <li style="float:right"><a class="fi" href="log2.jsp" >REGISTER</a></li>
+            <li style="float:right"><a class="fi" href="home.jsp" >HOME</a></li>
+                
+        </nav>
 <%
 ArrayList<Product> list = new ArrayList<>();
 DB db = new DB();
@@ -33,20 +49,9 @@ try {
 	// TODO Auto-generated catch block
 	e.printStackTrace();
 }
+session.setAttribute("list", list);
 request.setAttribute("list", list);
  %>
- <h1 style="font-size:30px">GROCERS </h1>
-        
-        <nav class="navigation-bar">
-            <img class="logo" src="fruits-and-vegetable.png">
-            <a href="lab2.html" >SHOP BY CATEGORY</a>
-            
-            <li style="float:right"><a class="fi" href="about.html">ABOUT</a></li>
-            <li style="float:right"><a class="fi" href="index.jsp" >LOGIN</a></li>
-            <li style="float:right"><a class="fi" href="log2.html" >REGISTER</a></li>
-            <li style="float:right"><a class="fi" href="home.html" >HOME</a></li>
-                
-        </nav>
 <h2 style="text-align: center;">OILS</h2><br>
 
 <c:forEach items="${list }" var="product">
@@ -58,6 +63,7 @@ request.setAttribute("list", list);
 		 						<img id="hr" src="${product.getImage() }"  >
 		 						<figcaption><c:out value="${product.getName() }"></c:out></figcaption><br>
 		 						<figcaption><p > &#x20b9;  <c:out value="${ product.getPrice() }"></c:out></p></figcaption>
+		 						<a id="t"  href="Anishka?page=addtocart&action=oil&id=<c:out value="${product.getId()}"/>">Add to Cart</a>
 		 						</figure>
 		 					
 		 					
